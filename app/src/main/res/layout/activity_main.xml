@@ -12,8 +12,40 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/nav_bar_height"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/element_default_padding"
+                android:paddingVertical="@dimen/element_mini_padding"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="24sp"
+                    tools:text="RootApp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/menu_button"
+                    android:contentDescription="@string/open_drawer_menu_button"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/ic_hamburger"
+                    android:background="@android:color/transparent" />
+
+            </LinearLayout>
             <!-- content -->
 
         </LinearLayout>
@@ -22,7 +54,8 @@
             android:id="@+id/navigation"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
+            android:layout_gravity="end"
+            android:fitsSystemWindows="true"
             app:headerLayout="@layout/navigation_drawer_header"
             app:menu="@menu/navigation_drawer_content">
 
