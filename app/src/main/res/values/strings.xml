@@ -6,4 +6,6 @@
     <string name="my_email">ndricimrrahmani@gmail.com</string>
     <string name="my_full_name">Ndriçim Rrahmani</string>
     <string name="open_drawer_menu_button">Open drawer menu button</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
