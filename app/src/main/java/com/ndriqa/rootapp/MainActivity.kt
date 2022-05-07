@@ -26,7 +26,7 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setToolbar() {
-        binding.toolbar.title.text = "Testione"
+        binding.toolbar.title.text = "mew"
     }
 
     override fun onClickListeners() {
