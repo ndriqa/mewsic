@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RootApp</string>
+    <string name="my_other_apps">My other apps</string>
+    <string name="donate">Donate</string>
+    <string name="contact_me">Contact me</string>
+    <string name="my_email">ndricimrrahmani@gmail.com</string>
+    <string name="my_full_name">Ndriçim Rrahmani</string>
+</resources>
