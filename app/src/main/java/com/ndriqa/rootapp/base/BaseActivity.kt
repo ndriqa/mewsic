@@ -1,7 +1,7 @@
 package com.ndriqa.rootapp.base
 
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 
-abstract class BaseActivity: Activity(), BaseFunction {
+abstract class BaseActivity: AppCompatActivity(), BaseFunction {
 
 }
