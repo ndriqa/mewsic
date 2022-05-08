@@ -1,15 +1,15 @@
 package com.ndriqa.rootapp.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.ndriqa.rootapp.R
+import com.ndriqa.rootapp.base.BaseFragment
 import com.ndriqa.rootapp.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment() {
     private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
@@ -21,4 +21,17 @@ class HomeFragment : Fragment() {
         binding.lifecycleOwner = this
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initBaseFunctions()
+    }
+
+    override fun onLoad() {  }
+
+    override fun setToolbar() {  }
+
+    override fun onClickListeners() {  }
+
+    override fun observers() {  }
 }
