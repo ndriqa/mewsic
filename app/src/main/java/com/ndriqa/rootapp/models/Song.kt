@@ -10,5 +10,8 @@ class Song(
     val audioFolderName: String?,
     val audioId: Long?,
     val audioDateAdded: Int?,
+    val absolutePath: String?,
+    val albumId: Long?,
+    val albumArtPath: String?,
     var isPlaying: Boolean = false
 )

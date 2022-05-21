@@ -13,6 +13,7 @@ import java.io.File
 
 class MainActivityViewModel: ViewModel() {
     val allSongs = MutableLiveData<List<Song>>()
+    val nowPlaying = MutableLiveData<Song>()
 
     fun getAllAudioFromDevice(context: Context){
         val tempAudioList: MutableList<Song> = mutableListOf()
@@ -32,7 +33,9 @@ class MainActivityViewModel: ViewModel() {
                 MediaStore.Audio.AudioColumns.ALBUM,        // 5
                 pathColumn,                                 // 6
                 MediaStore.Audio.AudioColumns._ID,          // 7
-                MediaStore.MediaColumns.DATE_MODIFIED       // 8
+                MediaStore.MediaColumns.DATE_MODIFIED,      // 8
+                MediaStore.MediaColumns.DATA,
+                MediaStore.Audio.AlbumColumns.ALBUM_ART     //TODO(fix this shit)
             )
 
             val publicPath = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
@@ -52,6 +55,7 @@ class MainActivityViewModel: ViewModel() {
                 val relativePathIndex = cursor.getColumnIndexOrThrow(pathColumn)
                 val idIndex = cursor.getColumnIndexOrThrow(MediaStore.Audio.AudioColumns._ID)
                 val dateAddedIndex = cursor.getColumnIndexOrThrow(MediaStore.Audio.AudioColumns.DATE_MODIFIED)
+                val absolutePathIndex = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA)
 
                 while (cursor.moveToNext()) {
                     // Now loop through the music files
@@ -64,6 +68,7 @@ class MainActivityViewModel: ViewModel() {
                     val audioAlbum = cursor.getString(albumIndex)
                     val audioRelativePath = cursor.getString(relativePathIndex)
                     val audioDateAdded = cursor.getInt(dateAddedIndex)
+                    val audioAbsolutePath = cursor.getString(absolutePathIndex)
 
                     val audioFolderName =
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -91,7 +96,10 @@ class MainActivityViewModel: ViewModel() {
                             audioAlbum,
                             audioFolderName,
                             audioId,
-                            audioDateAdded
+                            audioDateAdded,
+                            audioAbsolutePath,
+                            0L,             //TODO(get album is and album art)
+                            audioAbsolutePath
                         )
                     )
                 }

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ndriqa.rootapp.R
@@ -21,7 +22,8 @@ class HomeFragment : BaseFragment() {
     private val viewModel: MainActivityViewModel by activityViewModels()
 
     private val musicAdapter = MusicAdapter(object : MusicAdapter.Listener {
-        override fun songClicked(song: Song) {
+        override fun playSong(song: Song) {
+            viewModel.nowPlaying.postValue(song)
             Log.i("mytag", song.audioDisplayName.toString())
         }
     })
@@ -44,6 +46,7 @@ class HomeFragment : BaseFragment() {
 
     private fun initRecyclerView() {
         binding.musicListRecyclerView.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+        binding.musicListRecyclerView.addItemDecoration(DividerItemDecoration(requireContext(), RecyclerView.VERTICAL))
         binding.musicListRecyclerView.adapter = musicAdapter
     }
 

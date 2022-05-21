@@ -11,4 +11,6 @@
     <string name="search_your_music">Search your music</string>
     <string name="search_logo">Search logo</string>
     <string name="slash">/</string>
+    <string name="is_playing_icon">Is playing icon</string>
+    <string name="song_art">Song art</string>
 </resources>
