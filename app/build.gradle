@@ -53,4 +53,15 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:2.4.2"
     implementation "androidx.navigation:navigation-ui-ktx:2.4.2"
 
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.1"
+
+    // Annotation processor
+    //noinspection LifecycleAnnotationProcessorWithJava8
+    kapt "androidx.lifecycle:lifecycle-compiler:2.4.1"
+
 }

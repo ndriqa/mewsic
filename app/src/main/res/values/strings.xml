@@ -8,4 +8,7 @@
     <string name="open_drawer_menu_button">Open drawer menu button</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_your_music">Search your music</string>
+    <string name="search_logo">Search logo</string>
+    <string name="slash">/</string>
 </resources>
